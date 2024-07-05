@@ -267,7 +267,9 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const prefectureList = [];
+      const prefectureList = [
+        { id: 1, name: "東京都", population: "約14,000,000" },
+      ];
       const prefectureTbody = document.getElementById('prefecture-tbody');
       prefectureList.forEach(pref => {
         const row = document.createElement('tr');
