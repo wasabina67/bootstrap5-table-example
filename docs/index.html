@@ -22,7 +22,7 @@
             <th scope="col">人口</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="prefecture-tbody">
           <tr>
             <th scope="row">1</th>
             <td>東京都</td>
@@ -266,5 +266,14 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const prefectureList = [];
+      const prefectureTbody = document.getElementById('prefecture-tbody');
+      prefectureList.forEach(pref => {
+        const row = document.createElement('tr');
+        row.innerHTML = ``;
+        prefectureTbody.appendChild(row);
+      });
+    </script>
   </body>
 </html>
