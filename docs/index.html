@@ -271,7 +271,11 @@
       const prefectureTbody = document.getElementById('prefecture-tbody');
       prefectureList.forEach(pref => {
         const row = document.createElement('tr');
-        row.innerHTML = ``;
+        row.innerHTML = `
+          <th scope="row">${pref.id}</th>
+          <td>${pref.name}</td>
+          <td>${pref.population}</td>
+        `;
         prefectureTbody.appendChild(row);
       });
     </script>
