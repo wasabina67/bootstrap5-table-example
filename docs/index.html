@@ -80,8 +80,18 @@
         { id: 46, name: "鹿児島県", population: "1,574,000" },
         { id: 47, name: "沖縄県", population: "1,468,000" },
       ];
+      const params = new URLSearchParams(window.location.search);
+      const sortBy = params.get('sortBy');
+      let pList;
+      if (sortBy === 'asc') {
+        pList = prefectureList;
+      } else if (sortBy === 'desc') {
+        pList = prefectureList;
+      } else {
+        pList = prefectureList;
+      }
       const prefectureTbody = document.getElementById('prefecture-tbody');
-      prefectureList.forEach(pref => {
+      pList.forEach(pref => {
         const row = document.createElement('tr');
         row.innerHTML = `
           <th scope="row">${pref.id}</th>
