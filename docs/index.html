@@ -84,9 +84,13 @@
       const sortBy = params.get('sortBy');
       let pList;
       if (sortBy === 'asc') {
-        pList = prefectureList;
+        pList = prefectureList.sort(
+          (a, b) => parseInt(a.population.replace(/,/g, '')) - parseInt(b.population.replace(/,/g, ''))
+        );
       } else if (sortBy === 'desc') {
-        pList = prefectureList;
+        pList = prefectureList.sort(
+          (a, b) => parseInt(b.population.replace(/,/g, '')) - parseInt(a.population.replace(/,/g, ''))
+        );
       } else {
         pList = prefectureList;
       }
